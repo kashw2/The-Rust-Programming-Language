@@ -1,0 +1,36 @@
+name: "Programming a Guessing Game"
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - ./guessing-game
+      - Cargo.toml
+      - Cargo.lock
+
+jobs:
+  check:
+    name: "Check"
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install rust
+        run: rustup default stable
+
+      - name: compile
+        run: cargo check -p guessing-game
+  build:
+    name: "Build"
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install rust
+        run: rustup default stable
+
+      - name: compile
+        run: cargo build -p guessing-game
