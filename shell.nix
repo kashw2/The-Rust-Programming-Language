@@ -12,6 +12,7 @@ pkgs.mkShell (with pkgs; {
         rustc
         rustup
         cargo
+        gcc
     ];
 
     shellHook = ''
