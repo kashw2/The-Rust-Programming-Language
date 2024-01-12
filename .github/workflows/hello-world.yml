@@ -11,6 +11,18 @@ on:
       - Cargo.lock
 
 jobs:
+  check:
+    name: "Check"
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install rust
+        run: rustup default stable
+
+      - name: compile
+        run: cargo check -p hello-world
   build:
     name: "Build"
     if: github.event_name != 'push'
