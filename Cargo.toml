@@ -2,6 +2,6 @@
 
 members = [
     "hello_cargo",
-    "hello_world"
+    "hello_world",
     "guessing_game",
 ]
