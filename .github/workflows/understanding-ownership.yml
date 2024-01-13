@@ -1,0 +1,37 @@
+name: "Understanding Ownership"
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - ./understanding_ownership
+      - Cargo.toml
+      - Cargo.lock
+
+jobs:
+  check:
+    name: "Check"
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install rust
+        run: rustup default stable
+
+      - name: compile
+        run: cargo check -p understanding_ownership
+  build:
+    name: "Build"
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install rust
+        run: rustup default stable
+
+      - name: compile
+        run: cargo build -p understanding_ownership
