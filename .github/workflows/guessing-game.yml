@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - ./guessing-game
+      - ./guessing_game
       - Cargo.toml
       - Cargo.lock
 
@@ -22,7 +22,7 @@ jobs:
         run: rustup default stable
 
       - name: compile
-        run: cargo check -p guessing-game
+        run: cargo check -p guessing_game
   build:
     name: "Build"
     if: github.event_name != 'push'
@@ -34,4 +34,4 @@ jobs:
         run: rustup default stable
 
       - name: compile
-        run: cargo build -p guessing-game
+        run: cargo build -p guessing_game
