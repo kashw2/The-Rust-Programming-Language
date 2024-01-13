@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - ./hello-cargo
+      - ./hello_cargo
       - Cargo.toml
       - Cargo.lock
 
@@ -22,7 +22,7 @@ jobs:
         run: rustup default stable
 
       - name: compile
-        run: cargo check -p hello-cargo
+        run: cargo check -p hello_cargo
   build:
     name: "Build"
     if: github.event_name != 'push'
@@ -34,4 +34,4 @@ jobs:
         run: rustup default stable
 
       - name: compile
-        run: cargo build -p hello-cargo
+        run: cargo build -p hello_cargo
