@@ -1,5 +1,3 @@
-use std::env::var;
-
 fn main() {
     // Chapter 3.1
     let mut x: i32 = 10;
@@ -31,4 +29,17 @@ fn main() {
 
     let _days: [&str; 7] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     let _monday: &str = _days[0];
+
+    // Chapter 3.3
+    another_function(5);
+    println!("{}", five());
+}
+
+fn another_function(x: u32) {
+    println!("Just another function");
+    println!("{x} was passed to the function");
+}
+
+fn five() -> u8 {
+    5
 }
