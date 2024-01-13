@@ -33,6 +33,19 @@ fn main() {
     // Chapter 3.3
     another_function(5);
     println!("{}", five());
+
+    // Chapter 3.5
+    let number: i32 = 3;
+
+    if number < 5 {
+        println!("condition was true");
+    } else {
+        println!("condition was false");
+    }
+
+    for number in 0..3 {
+        println!("The number is {number}");
+    }
 }
 
 fn another_function(x: u32) {
