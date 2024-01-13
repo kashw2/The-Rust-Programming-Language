@@ -4,4 +4,5 @@ members = [
     "hello_cargo",
     "hello_world",
     "guessing_game",
+    "common_programming_concepts",
 ]
