@@ -1,0 +1,37 @@
+name: "Structure Related Data"
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - ./structure_related_data
+      - Cargo.toml
+      - Cargo.lock
+
+jobs:
+  check:
+    name: "Check"
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install rust
+        run: rustup default stable
+
+      - name: compile
+        run: cargo check -p structure_related_data
+  build:
+    name: "Build"
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install rust
+        run: rustup default stable
+
+      - name: compile
+        run: cargo build -p structure_related_data
