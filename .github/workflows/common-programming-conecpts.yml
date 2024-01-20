@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - ./common_programming_conecpts
+      - ./common_programming_concepts
       - Cargo.toml
       - Cargo.lock
 
