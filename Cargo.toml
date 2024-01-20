@@ -6,4 +6,5 @@ members = [
     "guessing_game",
     "common_programming_concepts",
     "understanding_ownership",
+    "structure_related_data",
 ]
