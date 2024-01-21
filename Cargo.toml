@@ -7,4 +7,5 @@ members = [
     "common_programming_concepts",
     "understanding_ownership",
     "structure_related_data",
+    "enums_and_pattern_matching",
 ]

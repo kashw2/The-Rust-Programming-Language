@@ -1,4 +1,4 @@
-name: "Common Programming Concepts"
+name: "Enums and Pattern Matching"
 
 on:
   workflow_dispatch:
@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - ./common_programming_concepts
+      - ./enums_and_pattern_matching
       - Cargo.toml
       - Cargo.lock
 
@@ -22,7 +22,7 @@ jobs:
         run: rustup default stable
 
       - name: compile
-        run: cargo check -p common_programming_concepts
+        run: cargo check -p enums_and_pattern_matching
   build:
     name: "Build"
     if: github.event_name != 'push'
@@ -34,4 +34,4 @@ jobs:
         run: rustup default stable
 
       - name: compile
-        run: cargo build -p common_programming_concepts
+        run: cargo build -p enums_and_pattern_matching
