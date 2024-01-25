@@ -9,4 +9,5 @@ members = [
     "structure_related_data",
     "enums_and_pattern_matching",
     "growing_projects",
+    "common_collections",
 ]
