@@ -10,4 +10,5 @@ members = [
     "enums_and_pattern_matching",
     "growing_projects",
     "common_collections",
+    "error_handling",
 ]
