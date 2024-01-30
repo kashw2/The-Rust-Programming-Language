@@ -11,4 +11,5 @@ members = [
     "growing_projects",
     "common_collections",
     "error_handling",
+    "generics_traits_lifetimes",
 ]
