@@ -1,0 +1,49 @@
+name: "Running Automated Tests"
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - ./running_automated_tests
+      - Cargo.toml
+      - Cargo.lock
+
+jobs:
+  check:
+    name: "Check"
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install rust
+        run: rustup default stable
+
+      - name: compile
+        run: cargo check -p running_automated_tests
+  test:
+    name: "Test"
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install rust
+        run: rustup default stable
+
+      - name: test
+        run: cargo test -p running_automated_tests
+  build:
+    name: "Build"
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install rust
+        run: rustup default stable
+
+      - name: compile
+        run: cargo build -p running_automated_tests

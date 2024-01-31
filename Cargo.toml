@@ -12,4 +12,5 @@ members = [
     "common_collections",
     "error_handling",
     "generics_traits_lifetimes",
+    "running_automated_tests",
 ]
